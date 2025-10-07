@@ -16,6 +16,7 @@ const plans = [
     icon: Sparkles,
     gradient: "from-blue-500/10 to-cyan-500/10",
     borderGradient: "from-blue-500/50 to-cyan-500/50",
+    textGradient: "from-blue-300 to-cyan-300",
     features: [
       "Custom responsive design",
       "3-5 content sections",
@@ -35,6 +36,7 @@ const plans = [
     icon: Zap,
     gradient: "from-violet-500/10 to-purple-500/10",
     borderGradient: "from-violet-500/50 to-purple-500/50",
+    textGradient: "from-violet-300 to-purple-300",
     features: [
       "Full mobile app design",
       "5-8 screens/features",
@@ -55,6 +57,7 @@ const plans = [
     icon: Rocket,
     gradient: "from-teal-500/10 to-cyan-500/10",
     borderGradient: "from-teal-500/50 to-cyan-500/50",
+    textGradient: "from-teal-300 to-cyan-300",
     features: [
       "Complete web/mobile platform",
       "Admin dashboard",
@@ -127,7 +130,9 @@ export function PricingSection() {
                     <h3 className="text-white mb-2">{plan.tier}</h3>
                     <p className="text-gray-400 text-sm mb-4">{plan.description}</p>
                     <div className="flex items-baseline gap-2">
-                      <div className={`text-2xl sm:text-3xl font-semibold bg-gradient-to-r ${plan.borderGradient} bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(139,92,246,0.3)]`}>
+                      <div
+                        className={`${plan.id === 3 ? "text-xl sm:text-2xl md:text-3xl" : "text-2xl sm:text-3xl"} font-semibold bg-gradient-to-r ${plan.textGradient} bg-clip-text text-transparent whitespace-nowrap leading-none tracking-tight saturate-150 brightness-125 drop-shadow-[0_0_24px_rgba(167,139,250,0.45)]`}
+                      >
                         {plan.priceRange}
                       </div>
                     </div>

@@ -2,9 +2,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { MagneticButton } from "./MagneticButton";
 import { RevealText } from "./RevealText";
-import { AbstractShapes } from "./illustrations/AbstractShapes";
-import { LiquidBlob } from "./illustrations/LiquidBlob";
-import { ParticleField } from "./ParticleField";
+// Simplified hero: removed decorative shapes/particles for a cleaner look
 import { LotusLogo } from "./LotusLogo";
 
 interface HeroSectionProps {
@@ -27,66 +25,7 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
       {/* Enhanced dark gradient background with layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0E0E0E] via-[#1A1A1A] to-[#0E0E0E]" />
       
-      {/* Particle field */}
-      <ParticleField />
-
-      {/* Abstract shapes */}
-      <AbstractShapes />
-
-      {/* Liquid blobs */}
-      <LiquidBlob className="top-0 left-0 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2" color="violet" />
-      <LiquidBlob className="top-1/2 right-0 w-[600px] h-[600px] translate-x-1/4" color="teal" />
-      <LiquidBlob className="bottom-0 left-1/2 w-[700px] h-[700px] translate-y-1/2" color="purple" />
-      
-      {/* Animated gradient orbs with parallax */}
-      <motion.div 
-        style={{ y: y1 }}
-        className="absolute inset-0 flex items-center justify-center"
-      >
-        <motion.div 
-          className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full blur-[120px]"
-          animate={{
-            background: [
-              "radial-gradient(circle, rgba(139,92,246,0.25) 0%, rgba(139,92,246,0) 70%)",
-              "radial-gradient(circle, rgba(139,92,246,0.35) 0%, rgba(139,92,246,0) 70%)",
-              "radial-gradient(circle, rgba(139,92,246,0.25) 0%, rgba(139,92,246,0) 70%)",
-            ],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      </motion.div>
-
-      <motion.div 
-        style={{ y: y2 }}
-        className="absolute inset-0 flex items-center justify-center"
-      >
-        <motion.div 
-          className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full blur-[100px] translate-x-32"
-          animate={{
-            background: [
-              "radial-gradient(circle, rgba(20,184,166,0.2) 0%, rgba(20,184,166,0) 70%)",
-              "radial-gradient(circle, rgba(20,184,166,0.3) 0%, rgba(20,184,166,0) 70%)",
-              "radial-gradient(circle, rgba(20,184,166,0.2) 0%, rgba(20,184,166,0) 70%)",
-            ],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-        />
-      </motion.div>
-
-      {/* Grain texture overlay */}
-      <div className="absolute inset-0 opacity-[0.02] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')]" />
-
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
+      {/* Clean background only; decorative layers removed */}
 
       {/* Content */}
       <motion.div 
@@ -104,27 +43,9 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
           }}
           className="mb-8 flex justify-center"
         >
-          <motion.div
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            transition={{ duration: 0.3 }}
-            className="relative"
-          >
+          <div className="relative">
             <LotusLogo size={80} animated />
-            <motion.div
-              className="absolute inset-0 blur-2xl opacity-50"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <LotusLogo size={80} />
-            </motion.div>
-          </motion.div>
+          </div>
         </motion.div>
 
         {/* Floating badge with enhanced animation */}
@@ -179,44 +100,7 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
               className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
             >
               experiences that{" "}
-              <span className="relative inline-block">
-                <motion.span
-                  className="bg-gradient-to-r from-violet-400 via-purple-400 to-teal-400 bg-clip-text text-transparent"
-                  animate={{
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  style={{
-                    backgroundSize: "200% 100%",
-                  }}
-                >
-                  bloom
-                </motion.span>
-                {/* Animated underline */}
-                <motion.span
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-violet-500 via-purple-500 to-teal-500 rounded-full"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 1, delay: 1.2, ease: [0.33, 1, 0.68, 1] }}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-white/50 rounded-full"
-                    animate={{
-                      x: ["-100%", "100%"],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "linear",
-                      delay: 1.5,
-                    }}
-                  />
-                </motion.span>
-              </span>
+              <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-teal-400 bg-clip-text text-transparent">bloom</span>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -248,7 +132,7 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
         >
           <MagneticButton
             onClick={onStartProject}
-            className="w-full sm:w-auto bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-6 relative group overflow-hidden shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300"
+            className="w-full sm:w-64 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-6 relative group overflow-hidden shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300"
           >
             <span className="relative z-10 flex items-center gap-2">
               Start Your Project
@@ -270,7 +154,7 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
           <MagneticButton
             onClick={scrollToWork}
             variant="outline"
-            className="w-full sm:w-auto border-2 border-white/20 bg-white text-black hover:bg-white/90 hover:border-white/30 px-8 py-6 group relative transition-all duration-300"
+            className="w-full sm:w-64 border-2 border-white/20 bg-white text-black hover:bg-white/90 hover:border-white/30 px-8 py-6 group relative transition-all duration-300"
           >
             <span className="relative z-10">View Our Work</span>
             <motion.div
