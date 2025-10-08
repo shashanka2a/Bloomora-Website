@@ -47,20 +47,26 @@ export function CodeIllustration() {
           />
         ))}
 
-        {/* Code lines */}
-        {[0, 1, 2, 3, 4].map((i) => (
+        {/* Code lines - more realistic code structure */}
+        {[
+          { x1: 70, x2: 200, y: 90 },
+          { x1: 70, x2: 180, y: 120 },
+          { x1: 90, x2: 220, y: 150 },
+          { x1: 70, x2: 160, y: 180 },
+          { x1: 90, x2: 240, y: 210 }
+        ].map((line, i) => (
           <motion.line
             key={i}
-            x1="70"
-            y1={90 + i * 30}
-            x2={150 + Math.random() * 150}
-            y2={90 + i * 30}
+            x1={line.x1}
+            y1={line.y}
+            x2={line.x2}
+            y2={line.y}
             stroke="url(#codeGrad)"
             strokeWidth="3"
             strokeLinecap="round"
             filter="url(#glow)"
             initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 0.6 }}
+            animate={{ pathLength: 1, opacity: 0.8 }}
             transition={{ delay: 0.5 + i * 0.1, duration: 0.8 }}
           />
         ))}

@@ -39,7 +39,7 @@ export function DataVisualization() {
           transition={{ duration: 1, delay: 0.2 }}
         />
 
-        {/* Bars */}
+        {/* Bars - representing business metrics */}
         {[120, 180, 90, 200, 150, 210].map((height, i) => (
           <motion.rect
             key={i}
@@ -49,21 +49,22 @@ export function DataVisualization() {
             height={height}
             rx="4"
             fill={i % 2 === 0 ? "url(#dataGrad1)" : "url(#dataGrad2)"}
+            opacity="0.9"
             initial={{ height: 0, y: 250 }}
             animate={{ height, y: 250 - height }}
             transition={{ delay: 0.4 + i * 0.1, duration: 0.6, ease: "easeOut" }}
           />
         ))}
 
-        {/* Trend line */}
+        {/* Trend line - growth trajectory */}
         <motion.path
           d="M 80,200 Q 150,150 220,180 T 340,100"
           stroke="#EC4899"
-          strokeWidth="3"
+          strokeWidth="4"
           fill="none"
           strokeLinecap="round"
           initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 0.8 }}
+          animate={{ pathLength: 1, opacity: 1 }}
           transition={{ delay: 1.2, duration: 1.5, ease: "easeInOut" }}
         />
 

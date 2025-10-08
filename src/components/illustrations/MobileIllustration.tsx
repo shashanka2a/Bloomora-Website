@@ -51,7 +51,7 @@ export function MobileIllustration() {
           transition={{ delay: 0.3, duration: 0.4 }}
         />
 
-        {/* Screen content - animated bars */}
+        {/* Screen content - app interface elements */}
         {[0, 1, 2].map((i) => (
           <motion.rect
             key={i}
@@ -61,9 +61,9 @@ export function MobileIllustration() {
             height="20"
             rx="10"
             fill="url(#phoneGrad)"
-            opacity="0.3"
+            opacity="0.6"
             initial={{ scaleX: 0, opacity: 0 }}
-            animate={{ scaleX: 1, opacity: 0.3 }}
+            animate={{ scaleX: 1, opacity: 0.6 }}
             transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}
           />
         ))}
@@ -76,9 +76,9 @@ export function MobileIllustration() {
           height="25"
           rx="12"
           fill="url(#phoneGrad)"
-          opacity="0.4"
+          opacity="0.7"
           initial={{ y: 340, opacity: 0 }}
-          animate={{ y: 320, opacity: 0.4 }}
+          animate={{ y: 320, opacity: 0.7 }}
           transition={{ delay: 0.8, duration: 0.5 }}
         />
 

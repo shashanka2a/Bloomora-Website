@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Utensils, Heart, Camera, DollarSign } from "lucide-react";
 
 const projects = [
   {
@@ -8,9 +8,9 @@ const projects = [
     title: "Jose Kitchen",
     outcome: "WhatsApp Ordering",
     delivery: "3 week delivery",
-    image: "https://images.unsplash.com/photo-1700628785251-2c3c084bec23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZXhpY2FuJTIwZm9vZCUyMHJlc3RhdXJhbnR8ZW58MXx8fHwxNzU5ODIzMDM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZm9vZCUyMGRlbGl2ZXJ5JTIwbW9iaWxlJTIwYXBwfGVufDF8fHx8MTc1OTgyMzAzNXww&ixlib=rb-4.1.0&q=80&w=1080",
     link: "https://www.josekitchen.com/",
-    logo: "🌮",
+    logo: Utensils,
     tech: ["Next.js", "WhatsApp API", "Food Delivery"]
   },
   {
@@ -18,9 +18,9 @@ const projects = [
     title: "LoveBytes",
     outcome: ".edu verification",
     delivery: "6 week delivery",
-    image: "https://images.unsplash.com/photo-1736220689286-7348211abe3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xsZWdlJTIwc3R1ZGVudHMlMjBkYXRpbmd8ZW58MXx8fHwxNzU5ODIzMDM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NpYWwlMjBuZXR3b3JraW5nJTIwYXBwJTIwZGF0aW5nfGVufDF8fHx8MTc1OTgyMzAzNXww&ixlib=rb-4.1.0&q=80&w=1080",
     link: "https://www.lovebytes.xyz/",
-    logo: "💕",
+    logo: Heart,
     tech: ["React", "ZK Proofs", "Sonic Tech"]
   },
   {
@@ -28,9 +28,9 @@ const projects = [
     title: "SnapEvent",
     outcome: "Real-time booking",
     delivery: "5 week delivery",
-    image: "https://images.unsplash.com/photo-1750233894598-6b7db500a3e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldmVudCUyMHBob3RvZ3JhcGh5JTIwY2FtZXJhfGVufDF8fHx8MTc1OTgyMzAzNnww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldmVudCUyMGJvb2tpbmclMjBzeXN0ZW0lMjBwaG90b2dyYXBoeXxlbnwxfHx8fDE3NTk4MjMwMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
     link: "https://snapevent.in/",
-    logo: "📸",
+    logo: Camera,
     tech: ["Next.js", "Real-time", "Booking"]
   },
   {
@@ -38,9 +38,9 @@ const projects = [
     title: "PayFlow",
     outcome: "Real-time rates",
     delivery: "8 week delivery",
-    image: "https://images.unsplash.com/photo-1526841803814-753ac32aa9e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb25leSUyMHRyYW5zZmVyJTIwcGF5bWVudHxlbnwxfHx8fDE3NTk4MjMwMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW50ZWNoJTIwcGF5bWVudCUyMGFwcCUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NTk4MjMwMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
     link: "https://www.payflow.cash/",
-    logo: "💸",
+    logo: DollarSign,
     tech: ["Fintech", "Payment Gateway", "Security"]
   }
 ];
@@ -106,7 +106,7 @@ export function BentoGrid() {
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover opacity-20 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700 ease-out"
+                    className="w-full h-full object-cover opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
                 </div>
@@ -135,14 +135,14 @@ export function BentoGrid() {
                   {/* Top Section - Logo & External Link */}
                   <div className="flex items-start justify-between mb-auto">
                     <motion.div 
-                      className="text-4xl sm:text-5xl"
+                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-violet-500/20 to-teal-500/20 flex items-center justify-center border border-violet-500/30"
                       whileHover={{ 
                         scale: 1.15,
                         rotate: [0, -8, 8, -8, 0],
                       }}
                       transition={{ duration: 0.5 }}
                     >
-                      {project.logo}
+                      <project.logo className="w-6 h-6 sm:w-8 sm:h-8 text-violet-400" />
                     </motion.div>
 
                     <motion.div 
