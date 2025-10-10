@@ -64,6 +64,22 @@ export function TestimonialsSection() {
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl -translate-y-1/2" />
       
       <div className="max-w-5xl mx-auto relative">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 mb-4">
+              <span className="text-sm text-purple-400">Testimonials</span>
+            </div>
+            <h2 className="text-white mb-4 sm:mb-6">Trusted by Founders</h2>
+            <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
+              Trusted by founders across India and beyond.
+            </p>
+          </motion.div>
+        </div>
 
         <div className="relative">
           {/* Carousel */}

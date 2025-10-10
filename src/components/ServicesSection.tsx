@@ -39,6 +39,22 @@ export function ServicesSection() {
   return (
     <section id="services" className="py-16 sm:py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0A0A0A] to-[#0E0E0E] relative overflow-hidden">
       <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 mb-4">
+              <span className="text-sm text-teal-400">Services</span>
+            </div>
+            <h2 className="text-white mb-4 sm:mb-6">Our Services</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+              Comprehensive digital solutions tailored to your business needs and growth stage.
+            </p>
+          </motion.div>
+        </div>
 
         <div className="space-y-4 sm:space-y-6">
           {services.map((service, index) => {
