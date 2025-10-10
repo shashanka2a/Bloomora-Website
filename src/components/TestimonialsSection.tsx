@@ -6,27 +6,35 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    quote: "Bloomora transformed our vision into a stunning product. The attention to detail and speed of delivery was remarkable. Our conversion rates jumped by 40% in the first month.",
-    name: "Priya Sharma",
-    role: "Founder, TechVenture",
-    company: "TechVenture",
+    quote: "Bloomora delivered our WhatsApp ordering system in just 2 days! The speed and quality exceeded our expectations. Our customers love the seamless ordering experience.",
+    name: "Jose Manuel",
+    role: "Owner, Jose Kitchen",
+    company: "Jose Kitchen",
     image: "https://images.unsplash.com/photo-1671450960874-0903baf942c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBlbnRyZXByZW5ldXIlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NTk4MDA5MDh8MA&ixlib=rb-4.1.0&q=80&w=1080"
   },
   {
     id: 2,
-    quote: "Working with Bloomora was seamless. They understood our startup's needs and delivered a full-stack solution that scaled perfectly with our growth.",
-    name: "Arjun Mehta",
-    role: "CEO, GrowthLabs",
-    company: "GrowthLabs",
+    quote: "The .edu verification system they built for LoveBytes was flawless. Clean code, perfect functionality, and delivered exactly what we needed for our student dating platform.",
+    name: "Sai Govind",
+    role: "Founder, LoveBytes",
+    company: "LoveBytes",
     image: "https://images.unsplash.com/photo-1713973724182-0fe31a59b445?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbCUyMGluZGlhfGVufDF8fHx8MTc1OTgwMDkwOHww&ixlib=rb-4.1.0&q=80&w=1080"
   },
   {
     id: 3,
-    quote: "The mobile app they built exceeded all expectations. Beautiful design, smooth performance, and delivered ahead of schedule. Highly recommended!",
-    name: "Sanjay Kumar",
-    role: "Founder, FinFlow",
-    company: "FinFlow",
+    quote: "SnapEvent's real-time booking platform is a game-changer. Bloomora understood our marketplace needs and delivered a robust solution that handles high traffic perfectly.",
+    name: "Ravi Chandar",
+    role: "Founder, SnapEvent",
+    company: "SnapEvent",
     image: "https://images.unsplash.com/photo-1687570461530-fd0051bb2aaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwZm91bmRlciUyMHBvcnRyYWl0fGVufDF8fHx8MTc1OTgwMDkwOHww&ixlib=rb-4.1.0&q=80&w=1080"
+  },
+  {
+    id: 4,
+    quote: "PayFlow's dashboard with real-time rates integration is exactly what we needed. The fintech solution they built is secure, fast, and scales beautifully with our growth.",
+    name: "Amit Singh",
+    role: "Founder, PayFlow",
+    company: "PayFlow",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbCUyMGluZGlhfGVufDF8fHx8MTc1OTgwMDkwOHww&ixlib=rb-4.1.0&q=80&w=1080"
   }
 ];
 
