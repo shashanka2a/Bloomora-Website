@@ -18,10 +18,9 @@ export const metadata: Metadata = {
     "Design. Code. Deploy — websites and apps that convert, crafted for Indian founders and global startups.",
   icons: { 
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" }
+      { url: "/favicon.svg", type: "image/svg+xml" }
     ],
-    shortcut: "/favicon.ico",
+    shortcut: "/favicon.svg",
     apple: "/favicon.svg"
   },
   openGraph: {
