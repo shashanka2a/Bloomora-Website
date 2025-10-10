@@ -162,13 +162,16 @@ export function ServicesSection() {
           <p className="text-gray-400 mb-6 text-sm sm:text-base">
             Need something custom? Let's discuss your unique requirements.
           </p>
-          <motion.button
+          <motion.a
+            href="https://calendly.com/5ha5hank/availability"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-white hover:from-violet-700 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40"
+            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-white hover:from-violet-700 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40"
           >
             Schedule a Consultation
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>

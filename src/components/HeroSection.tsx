@@ -130,26 +130,27 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
           transition={{ duration: 0.8, delay: 1.4, ease: [0.33, 1, 0.68, 1] }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
         >
-          <MagneticButton
-            onClick={onStartProject}
-            className="w-full sm:w-64 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-6 relative group overflow-hidden shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              Start Your Project
+          <a href="https://calendly.com/5ha5hank/availability" target="_blank" rel="noopener noreferrer" className="w-full sm:w-64">
+            <MagneticButton
+              className="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-6 relative group overflow-hidden shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Start Your Project
+                <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </motion.div>
+              </span>
               <motion.div
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <ArrowRight className="w-5 h-5" />
-              </motion.div>
-            </span>
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-teal-500 to-violet-500"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: "0%" }}
-              transition={{ duration: 0.5 }}
-            />
-          </MagneticButton>
+                className="absolute inset-0 bg-gradient-to-r from-teal-500 to-violet-500"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: "0%" }}
+                transition={{ duration: 0.5 }}
+              />
+            </MagneticButton>
+          </a>
           
           <MagneticButton
             onClick={scrollToWork}

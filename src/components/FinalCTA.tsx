@@ -81,27 +81,30 @@ export function FinalCTA({ onStartProject }: FinalCTAProps) {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-            <MagneticButton
-              className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-8 py-6 gap-2 shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300 group"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Message on WhatsApp
-              <motion.div
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
+            <a href="https://calendly.com/5ha5hank/availability" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <MagneticButton
+                className="w-full bg-green-600 hover:bg-green-700 text-white px-8 py-6 gap-2 shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300 group"
               >
-                <ArrowRight className="w-5 h-5" />
-              </motion.div>
-            </MagneticButton>
-            
-            <MagneticButton
-              onClick={onStartProject}
-              variant="outline"
-              className="w-full sm:w-auto border-2 border-white/30 bg-white text-black hover:bg-white/90 hover:border-white/40 px-8 py-6 gap-2 transition-all duration-300 group"
-            >
-              <Calendar className="w-5 h-5" />
-              Start Your Project
-            </MagneticButton>
+                <MessageCircle className="w-5 h-5" />
+                Book a Call
+                <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </motion.div>
+              </MagneticButton>
+            </a>
+
+            <a href="https://calendly.com/5ha5hank/availability" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <MagneticButton
+                variant="outline"
+                className="w-full border-2 border-white/30 bg-white text-black hover:bg-white/90 hover:border-white/40 px-8 py-6 gap-2 transition-all duration-300 group"
+              >
+                <Calendar className="w-5 h-5" />
+                Start Your Project
+              </MagneticButton>
+            </a>
           </div>
 
           {/* Trust indicators */}

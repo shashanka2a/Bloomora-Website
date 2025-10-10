@@ -183,15 +183,17 @@ export function BentoGrid() {
           className="text-center mt-16 sm:mt-20"
         >
           <p className="text-gray-400 mb-5">
-            Interested in seeing more of our work?
+            Interested in discussing your project?
           </p>
           <motion.a
-            href="mailto:hello@bloomora.dev"
+            href="https://calendly.com/5ha5hank/availability"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600/10 to-teal-600/10 border border-violet-500/20 text-violet-400 hover:from-violet-600/20 hover:to-teal-600/20 hover:border-violet-500/40 transition-all duration-300 backdrop-blur-sm"
           >
-            Request Full Portfolio
+            Book a 15‑min Call
             <ExternalLink className="w-4 h-4" />
           </motion.a>
         </motion.div>
