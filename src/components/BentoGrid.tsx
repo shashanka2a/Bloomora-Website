@@ -55,31 +55,6 @@ export function BentoGrid() {
       </div>
 
       <div className="max-w-7xl mx-auto relative">
-        {/* Section Header */}
-        <div className="text-center mb-16 sm:mb-20 lg:mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <motion.div
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 mb-6 backdrop-blur-sm"
-              whileHover={{ scale: 1.05 }}
-            >
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="w-2 h-2 rounded-full bg-gradient-to-r from-violet-500 to-purple-500"
-              />
-              <span className="text-sm text-violet-400">Portfolio</span>
-            </motion.div>
-            <h2 className="text-white mb-6">Our Work</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Explore our portfolio of exceptional digital products crafted for ambitious founders.
-            </p>
-          </motion.div>
-        </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 max-w-5xl mx-auto">
