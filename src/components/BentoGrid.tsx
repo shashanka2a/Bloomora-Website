@@ -8,7 +8,7 @@ const projects = [
     title: "Jose Kitchen",
     outcome: "WhatsApp Ordering",
     delivery: "2 days delivery",
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZm9vZCUyMGRlbGl2ZXJ5JTIwbW9iaWxlJTIwYXBwfGVufDF8fHx8MTc1OTgyMzAzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/jose.png",
     link: "https://www.josekitchen.com/",
     logo: Utensils,
     tech: ["Next.js", "WhatsApp API", "Food Delivery"]
@@ -18,7 +18,7 @@ const projects = [
     title: "LoveBytes",
     outcome: ".edu verification",
     delivery: "1 week delivery",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NpYWwlMjBuZXR3b3JraW5nJTIwYXBwJTIwZGF0aW5nfGVufDF8fHx8MTc1OTgyMzAzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/lovebytes.png",
     link: "https://www.lovebytes.xyz/",
     logo: Heart,
     tech: ["React", "ZK Proofs", "Sonic Tech"]
@@ -28,7 +28,7 @@ const projects = [
     title: "SnapEvent",
     outcome: "Real-time booking",
     delivery: "2 weeks delivery",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldmVudCUyMGJvb2tpbmclMjBzeXN0ZW0lMjBwaG90b2dyYXBoeXxlbnwxfHx8fDE3NTk4MjMwMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/snapevent.png",
     link: "https://snapevent.in/",
     logo: Camera,
     tech: ["Next.js", "Real-time", "Booking"]
@@ -38,7 +38,7 @@ const projects = [
     title: "PayFlow",
     outcome: "Real-time rates",
     delivery: "4 weeks delivery",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW50ZWNoJTIwcGF5bWVudCUyMGFwcCUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NTk4MjMwMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/payflow.png",
     link: "https://www.payflow.cash/",
     logo: DollarSign,
     tech: ["Fintech", "Payment Gateway", "Security"]
