@@ -81,7 +81,7 @@ export function BentoGrid() {
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover opacity-30 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700 ease-out"
+                    className="w-full h-full object-cover opacity-30 group-hover:opacity-40 group-hover:scale-105 filter grayscale group-hover:grayscale-0 saturate-0 group-hover:saturate-100 transition-all duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
                 </div>
