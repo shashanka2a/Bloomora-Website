@@ -11,7 +11,7 @@ const projects = [
     image: "/jose.png",
     link: "https://www.josekitchen.com/",
     logo: Utensils,
-    tech: ["Next.js", "WhatsApp API", "Food Delivery"]
+    categories: ["Food ordering", "WhatsApp commerce", "SMB"]
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const projects = [
     image: "/lovebytes.png",
     link: "https://www.lovebytes.xyz/",
     logo: Heart,
-    tech: ["React", "ZK Proofs", "Sonic Tech"]
+    categories: ["Dating app", "Student network", ".edu verification"]
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const projects = [
     image: "/snapevent.png",
     link: "https://snapevent.in/",
     logo: Camera,
-    tech: ["Next.js", "Real-time", "Booking"]
+    categories: ["Marketplace", "Event booking", "Real-time"]
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const projects = [
     image: "/payflow.png",
     link: "https://www.payflow.cash/",
     logo: DollarSign,
-    tech: ["Fintech", "Payment Gateway", "Security"]
+    categories: ["Fintech", "Payments", "Dashboard"]
   }
 ];
 
@@ -163,17 +163,17 @@ export function BentoGrid() {
                       {project.title}
                     </motion.h3>
                     
-                    {/* Tech Stack */}
+                    {/* Business/Category tags */}
                     <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, i) => (
+                      {project.categories.map((tag, i) => (
                         <motion.span
                           key={i}
-                          className="text-xs px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-400 backdrop-blur-sm"
+                          className="text-xs px-3 py-1.5 rounded-lg bg-violet-500/10 border border-violet-500/20 text-violet-300 backdrop-blur-sm"
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.1 * i }}
+                          transition={{ delay: 0.08 * i }}
                         >
-                          {tech}
+                          {tag}
                         </motion.span>
                       ))}
                     </div>
