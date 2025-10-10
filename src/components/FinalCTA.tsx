@@ -81,12 +81,12 @@ export function FinalCTA({ onStartProject }: FinalCTAProps) {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-            <a href="https://calendly.com/5ha5hank/availability" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <a href="https://wa.me/918179504333?text=Hi%20Bloomora%2C%20I%27d%20like%20to%20discuss%20a%20new%20project." target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
               <MagneticButton
                 className="w-full bg-green-600 hover:bg-green-700 text-white px-8 py-6 gap-2 shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300 group"
               >
                 <MessageCircle className="w-5 h-5" />
-                Book a Call
+                Message on WhatsApp
                 <motion.div
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}

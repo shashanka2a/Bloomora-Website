@@ -15,7 +15,7 @@ const footerLinks = {
   ],
   contact: [
     { name: "hello@bloomora.dev", href: "mailto:hello@bloomora.dev" },
-    { name: "WhatsApp", href: "#" },
+    { name: "WhatsApp", href: "https://wa.me/918179504333?text=Hi%20Bloomora%2C%20I%27d%20like%20to%20discuss%20a%20new%20project." },
     { name: "Schedule Call", href: "https://calendly.com/5ha5hank/availability" },
   ],
 };
