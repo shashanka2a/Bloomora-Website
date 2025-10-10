@@ -106,7 +106,10 @@ export function BentoGrid() {
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover opacity-30 group-hover:opacity-60 group-hover:scale-105 filter grayscale group-hover:grayscale-0 saturate-0 group-hover:saturate-200 group-hover:contrast-125 group-hover:brightness-110 transition-all duration-700 ease-out"
+                    className={`w-full h-full object-cover opacity-30 group-hover:scale-105 filter grayscale group-hover:grayscale-0 saturate-0 transition-all duration-700 ease-out
+                    ${project.id === 1
+                      ? 'group-hover:opacity-50 group-hover:saturate-100 group-hover:contrast-100 group-hover:brightness-105'
+                      : 'group-hover:opacity-60 group-hover:saturate-200 group-hover:contrast-125 group-hover:brightness-110'}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
                 </div>
