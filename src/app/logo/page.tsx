@@ -9,7 +9,12 @@ export default function LogoPage() {
     svgRefs.current[key] = el;
   };
 
-  function downloadPngByKey(key: string, filename: string, scale = 4) {
+  function downloadPngByKey(
+    key: string,
+    filename: string,
+    options: { scale?: number; width?: number; background?: string } = {}
+  ) {
+    const { scale = 4, width, background } = options;
     const svg = svgRefs.current[key];
     if (!svg) return;
     const svgData = new XMLSerializer().serializeToString(svg);
@@ -18,12 +23,28 @@ export default function LogoPage() {
     const img = new Image();
     img.onload = () => {
       const canvas = document.createElement("canvas");
-      canvas.width = img.width * scale;
-      canvas.height = img.height * scale;
+      // Prefer explicit width if provided; otherwise scale intrinsic size
+      if (width) {
+        const aspect = img.height / img.width;
+        canvas.width = Math.round(width);
+        canvas.height = Math.round(width * aspect);
+      } else {
+        canvas.width = Math.round(img.width * scale);
+        canvas.height = Math.round(img.height * scale);
+      }
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
-      ctx.scale(scale, scale);
-      ctx.drawImage(img, 0, 0);
+      // Optional background (useful for light variants)
+      if (background) {
+        ctx.fillStyle = background;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+      if (width) {
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      } else {
+        ctx.scale(scale, scale);
+        ctx.drawImage(img, 0, 0);
+      }
       URL.revokeObjectURL(url);
       canvas.toBlob((blob) => {
         if (!blob) return;
@@ -42,7 +63,8 @@ export default function LogoPage() {
         <div className="flex flex-col items-center gap-4">
           <Logo variant="lockup" size={64} showGlow animated accessibleTitle="Bloomora logo lockup" svgRef={setSvgRef("lockup-primary")} />
           <div className="flex items-center gap-3">
-            <button onClick={() => downloadPngByKey("lockup-primary", "bloomora-lockup.png")} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">Download PNG</button>
+            <button onClick={() => downloadPngByKey("lockup-primary", "bloomora-lockup@4x.png", { scale: 4 })} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">PNG 4x</button>
+            <button onClick={() => downloadPngByKey("lockup-primary", "bloomora-lockup@8x.png", { scale: 8 })} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">PNG 8x</button>
           </div>
           <p className="text-gray-400 text-sm">Primary lockup for dark surfaces</p>
         </div>
@@ -56,11 +78,13 @@ export default function LogoPage() {
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <Logo variant="lotus" size={56} showGlow on="dark" svgRef={setSvgRef("lotus-dark")} />
-                <button onClick={() => downloadPngByKey("lotus-dark", "bloomora-lotus-dark.png")} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">Download</button>
+                <button onClick={() => downloadPngByKey("lotus-dark", "bloomora-lotus-dark@4x.png", { scale: 4 })} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">PNG 4x</button>
+                <button onClick={() => downloadPngByKey("lotus-dark", "bloomora-lotus-dark@8x.png", { scale: 8 })} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">PNG 8x</button>
               </div>
               <div className="flex items-center gap-2">
                 <Logo variant="lockup" size={40} on="dark" svgRef={setSvgRef("lockup-dark")} />
-                <button onClick={() => downloadPngByKey("lockup-dark", "bloomora-lockup-dark.png")} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">Download</button>
+                <button onClick={() => downloadPngByKey("lockup-dark", "bloomora-lockup-dark@4x.png", { scale: 4 })} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">PNG 4x</button>
+                <button onClick={() => downloadPngByKey("lockup-dark", "bloomora-lockup-dark@8x.png", { scale: 8 })} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">PNG 8x</button>
               </div>
             </div>
           </div>
@@ -73,11 +97,13 @@ export default function LogoPage() {
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <Logo variant="lotus" size={56} colorScheme="violet" on="light" svgRef={setSvgRef("lotus-light-violet")} />
-                <button onClick={() => downloadPngByKey("lotus-light-violet", "bloomora-lotus-violet-light.png")} className="px-3 py-1.5 rounded-md bg-zinc-900/5 text-zinc-900 text-sm border border-zinc-300 hover:bg-zinc-900/10">Download</button>
+                <button onClick={() => downloadPngByKey("lotus-light-violet", "bloomora-lotus-violet-light@4x.png", { scale: 4, background: "#FFFFFF" })} className="px-3 py-1.5 rounded-md bg-zinc-900/5 text-zinc-900 text-sm border border-zinc-300 hover:bg-zinc-900/10">PNG 4x</button>
+                <button onClick={() => downloadPngByKey("lotus-light-violet", "bloomora-lotus-violet-light@8x.png", { scale: 8, background: "#FFFFFF" })} className="px-3 py-1.5 rounded-md bg-zinc-900/5 text-zinc-900 text-sm border border-zinc-300 hover:bg-zinc-900/10">PNG 8x</button>
               </div>
               <div className="flex items-center gap-2">
                 <Logo variant="lockup" size={40} colorScheme="mono" on="light" svgRef={setSvgRef("lockup-light-mono")} />
-                <button onClick={() => downloadPngByKey("lockup-light-mono", "bloomora-lockup-mono-light.png")} className="px-3 py-1.5 rounded-md bg-zinc-900/5 text-zinc-900 text-sm border border-zinc-300 hover:bg-zinc-900/10">Download</button>
+                <button onClick={() => downloadPngByKey("lockup-light-mono", "bloomora-lockup-mono-light@4x.png", { scale: 4, background: "#FFFFFF" })} className="px-3 py-1.5 rounded-md bg-zinc-900/5 text-zinc-900 text-sm border border-zinc-300 hover:bg-zinc-900/10">PNG 4x</button>
+                <button onClick={() => downloadPngByKey("lockup-light-mono", "bloomora-lockup-mono-light@8x.png", { scale: 8, background: "#FFFFFF" })} className="px-3 py-1.5 rounded-md bg-zinc-900/5 text-zinc-900 text-sm border border-zinc-300 hover:bg-zinc-900/10">PNG 8x</button>
               </div>
             </div>
           </div>
@@ -96,7 +122,8 @@ export default function LogoPage() {
               ].map((item) => (
                 <div key={item.key} className="flex items-center gap-2">
                   <Logo variant="lotus" size={item.s} svgRef={setSvgRef(item.key)} />
-                  <button onClick={() => downloadPngByKey(item.key, `bloomora-lotus-${item.s}.png`)} className="px-2 py-1 rounded-md bg-white/10 text-white text-xs border border-white/20 hover:bg-white/15">PNG</button>
+                  <button onClick={() => downloadPngByKey(item.key, `bloomora-lotus-${item.s}@4x.png`, { scale: 4 })} className="px-2 py-1 rounded-md bg-white/10 text-white text-xs border border-white/20 hover:bg-white/15">4x</button>
+                  <button onClick={() => downloadPngByKey(item.key, `bloomora-lotus-${item.s}@8x.png`, { scale: 8 })} className="px-2 py-1 rounded-md bg-white/10 text-white text-xs border border-white/20 hover:bg-white/15">8x</button>
                 </div>
               ))}
             </div>
@@ -107,11 +134,13 @@ export default function LogoPage() {
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <Logo variant="lotus" size={48} badge svgRef={setSvgRef("badge")} />
-                <button onClick={() => downloadPngByKey("badge", "bloomora-badge.png")} className="px-2 py-1 rounded-md bg-white/10 text-white text-xs border border-white/20 hover:bg-white/15">PNG</button>
+                <button onClick={() => downloadPngByKey("badge", "bloomora-badge@4x.png", { scale: 4 })} className="px-2 py-1 rounded-md bg-white/10 text-white text-xs border border-white/20 hover:bg-white/15">4x</button>
+                <button onClick={() => downloadPngByKey("badge", "bloomora-badge@8x.png", { scale: 8 })} className="px-2 py-1 rounded-md bg-white/10 text-white text-xs border border-white/20 hover:bg-white/15">8x</button>
               </div>
               <div className="flex items-center gap-2">
                 <Logo variant="lotus" size={48} badge border svgRef={setSvgRef("badge-border")} />
-                <button onClick={() => downloadPngByKey("badge-border", "bloomora-badge-border.png")} className="px-2 py-1 rounded-md bg-white/10 text-white text-xs border border-white/20 hover:bg-white/15">PNG</button>
+                <button onClick={() => downloadPngByKey("badge-border", "bloomora-badge-border@4x.png", { scale: 4 })} className="px-2 py-1 rounded-md bg-white/10 text-white text-xs border border-white/20 hover:bg-white/15">4x</button>
+                <button onClick={() => downloadPngByKey("badge-border", "bloomora-badge-border@8x.png", { scale: 8 })} className="px-2 py-1 rounded-md bg-white/10 text-white text-xs border border-white/20 hover:bg-white/15">8x</button>
               </div>
             </div>
           </div>
@@ -129,7 +158,8 @@ export default function LogoPage() {
               ].map((item) => (
                 <div key={item.key} className="flex items-center gap-2">
                   <Logo variant="lotus" size={40} colorScheme={item.scheme as any} svgRef={setSvgRef(item.key)} />
-                  <button onClick={() => downloadPngByKey(item.key, `bloomora-${item.scheme}.png`)} className="px-2 py-1 rounded-md bg-white/10 text-white text-xs border border-white/20 hover:bg-white/15">PNG</button>
+                  <button onClick={() => downloadPngByKey(item.key, `bloomora-${item.scheme}@4x.png`, { scale: 4, background: item.scheme === "mono" || item.scheme === "violet" ? "#FFFFFF" : undefined })} className="px-2 py-1 rounded-md bg-white/10 text-white text-xs border border-white/20 hover:bg-white/15">4x</button>
+                  <button onClick={() => downloadPngByKey(item.key, `bloomora-${item.scheme}@8x.png`, { scale: 8, background: item.scheme === "mono" || item.scheme === "violet" ? "#FFFFFF" : undefined })} className="px-2 py-1 rounded-md bg-white/10 text-white text-xs border border-white/20 hover:bg-white/15">8x</button>
                 </div>
               ))}
             </div>
