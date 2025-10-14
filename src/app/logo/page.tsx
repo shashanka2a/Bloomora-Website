@@ -1,3 +1,4 @@
+"use client";
 import type { Metadata } from "next";
 import { Logo } from "@/components/Logo";
 import { useRef } from "react";
