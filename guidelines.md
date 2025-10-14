@@ -5,7 +5,7 @@ These guidelines document the core elements of the Bloomora brand to ensure cons
 ---
 
 ### 1. Brand Essence
-- **Positioning**: Web/App design + development studio for founders and startups
+- **Positioning**: Web/App design + development studio for business owners, founders and startups
 - **Voice**: Confident, clear, helpful; avoid jargon; focus on outcomes
 - **Tone**: Modern, optimistic, pragmatic
 
