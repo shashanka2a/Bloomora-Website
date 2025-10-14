@@ -1,12 +1,6 @@
 "use client";
-import type { Metadata } from "next";
 import { Logo } from "@/components/Logo";
 import { useRef } from "react";
-
-export const metadata: Metadata = {
-  title: "Bloomora Logo — Brand Assets",
-  description: "Bloomora lotus and wordmark lockups for brand usage.",
-};
 
 export default function LogoPage() {
   const lotusRef = useRef<SVGSVGElement | null>(null);
