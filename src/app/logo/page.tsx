@@ -61,7 +61,7 @@ export default function LogoPage() {
     <main className="min-h-screen bg-[#0E0E0E] flex items-center justify-center px-6 py-16">
       <div className="max-w-5xl w-full space-y-12">
         <div className="flex flex-col items-center gap-4">
-          <Logo variant="lockup" size={64} showGlow animated accessibleTitle="Bloomora logo lockup" svgRef={setSvgRef("lockup-primary")} />
+          <Logo variant="lockup" size={64} showGlow animated accessibleTitle="Bloomora logo lockup" svgRef={setSvgRef("lockup-primary")} renderAs="svg" />
           <div className="flex items-center gap-3">
             <button onClick={() => downloadPngByKey("lockup-primary", "bloomora-lockup@4x.png", { scale: 4 })} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">PNG 4x</button>
             <button onClick={() => downloadPngByKey("lockup-primary", "bloomora-lockup@8x.png", { scale: 8 })} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">PNG 8x</button>
@@ -82,7 +82,7 @@ export default function LogoPage() {
                 <button onClick={() => downloadPngByKey("lotus-dark", "bloomora-lotus-dark@8x.png", { scale: 8 })} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">PNG 8x</button>
               </div>
               <div className="flex items-center gap-2">
-                <Logo variant="lockup" size={40} on="dark" svgRef={setSvgRef("lockup-dark")} />
+                <Logo variant="lockup" size={40} on="dark" svgRef={setSvgRef("lockup-dark")} renderAs="svg" />
                 <button onClick={() => downloadPngByKey("lockup-dark", "bloomora-lockup-dark@4x.png", { scale: 4 })} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">PNG 4x</button>
                 <button onClick={() => downloadPngByKey("lockup-dark", "bloomora-lockup-dark@8x.png", { scale: 8 })} className="px-3 py-1.5 rounded-md bg-white/10 text-white text-sm border border-white/20 hover:bg-white/15">PNG 8x</button>
               </div>
@@ -101,7 +101,7 @@ export default function LogoPage() {
                 <button onClick={() => downloadPngByKey("lotus-light-violet", "bloomora-lotus-violet-light@8x.png", { scale: 8, background: "#FFFFFF" })} className="px-3 py-1.5 rounded-md bg-zinc-900/5 text-zinc-900 text-sm border border-zinc-300 hover:bg-zinc-900/10">PNG 8x</button>
               </div>
               <div className="flex items-center gap-2">
-                <Logo variant="lockup" size={40} colorScheme="mono" on="light" svgRef={setSvgRef("lockup-light-mono")} />
+                <Logo variant="lockup" size={40} colorScheme="mono" on="light" svgRef={setSvgRef("lockup-light-mono")} renderAs="svg" />
                 <button onClick={() => downloadPngByKey("lockup-light-mono", "bloomora-lockup-mono-light@4x.png", { scale: 4, background: "#FFFFFF" })} className="px-3 py-1.5 rounded-md bg-zinc-900/5 text-zinc-900 text-sm border border-zinc-300 hover:bg-zinc-900/10">PNG 4x</button>
                 <button onClick={() => downloadPngByKey("lockup-light-mono", "bloomora-lockup-mono-light@8x.png", { scale: 8, background: "#FFFFFF" })} className="px-3 py-1.5 rounded-md bg-zinc-900/5 text-zinc-900 text-sm border border-zinc-300 hover:bg-zinc-900/10">PNG 8x</button>
               </div>

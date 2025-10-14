@@ -21,6 +21,7 @@ interface LogoProps {
   badge?: boolean;
   border?: boolean;
   svgRef?: React.Ref<SVGSVGElement>;
+  renderAs?: "html" | "svg"; // when lockup, allow single-SVG export with wordmark
 }
 
 export function Logo({
@@ -39,6 +40,7 @@ export function Logo({
   badge = false,
   border = false,
   svgRef,
+  renderAs = "html",
 }: LogoProps) {
   const isDark = on === "dark";
 
@@ -145,6 +147,85 @@ export function Logo({
 
   if (variant === "lotus") return lotus;
   if (variant === "wordmark") return <Wordmark />;
+
+  // Lockup as single SVG for export-friendly rendering (includes wordmark as SVG text)
+  if (variant === "lockup" && renderAs === "svg") {
+    const wmSize = wordmarkSize ?? size * 0.6;
+    const gap = lockupGap;
+    // Approximate wordmark width: factor based on glyphs; tuned for Geist
+    const wordmarkApproxWidth = wmSize * 6.2;
+    const totalWidth = Math.round(size + gap + wordmarkApproxWidth);
+    const totalHeight = Math.round(size);
+    const textY = Math.round(size * 0.68); // baseline alignment
+
+    return (
+      <motion.svg
+        width={totalWidth}
+        height={totalHeight}
+        viewBox={`0 0 ${totalWidth} ${totalHeight}`}
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        initial={animated ? { opacity: 0, y: 4 } : false}
+        animate={animated ? { opacity: 1, y: 0 } : undefined}
+        transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
+        className={className}
+        style={style}
+        aria-label={ariaLabel}
+        ref={svgRef as any}
+      >
+        {accessibleTitle ? <title>{accessibleTitle}</title> : null}
+        <defs>
+          <linearGradient id="lotus-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#8B5CF6" />
+            <stop offset="100%" stopColor="#14B8A6" />
+          </linearGradient>
+        </defs>
+        {/* Lotus at left */}
+        <g transform={`translate(0, ${Math.max(0, (totalHeight - size) / 2)})`}>
+          {/* Reuse lotus shapes at original coordinates scaled to size 32→size */}
+          <g transform={`scale(${size / 32})`}>
+            {colorScheme === "outline" ? (
+              <>
+                <circle cx="16" cy="16" r="3" stroke={getFill().stroke} strokeWidth={getFill().strokeWidth} fill="none" />
+                <path d="M16 26 C12 22, 12 18, 16 14 C20 18, 20 22, 16 26" stroke={getFill().stroke} strokeWidth={getFill().strokeWidth} fill="none" />
+                <path d="M16 14 C12 10, 12 6, 16 2 C20 6, 20 10, 16 14" stroke={getFill().stroke} strokeWidth={getFill().strokeWidth} fill="none" />
+                <path d="M6 20 C2 18, 0 14, 4 10 C8 12, 10 16, 6 20" stroke={getFill().stroke} strokeWidth={getFill().strokeWidth} fill="none" />
+                <path d="M26 20 C30 18, 32 14, 28 10 C24 12, 22 16, 26 20" stroke={getFill().stroke} strokeWidth={getFill().strokeWidth} fill="none" />
+              </>
+            ) : (
+              <>
+                <circle cx="16" cy="16" r="3" fill={colorScheme === "brand" ? "url(#lotus-gradient)" : getFill().fill} />
+                <path d="M16 26 C12 22, 12 18, 16 14 C20 18, 20 22, 16 26" fill={colorScheme === "brand" ? "url(#lotus-gradient)" : getFill().fill} opacity="0.9" />
+                <path d="M16 14 C12 10, 12 6, 16 2 C20 6, 20 10, 16 14" fill={colorScheme === "brand" ? "url(#lotus-gradient)" : getFill().fill} opacity="0.9" />
+                <path d="M6 20 C2 18, 0 14, 4 10 C8 12, 10 16, 6 20" fill={colorScheme === "brand" ? "url(#lotus-gradient)" : getFill().fill} opacity="0.9" />
+                <path d="M26 20 C30 18, 32 14, 28 10 C24 12, 22 16, 26 20" fill={colorScheme === "brand" ? "url(#lotus-gradient)" : getFill().fill} opacity="0.9" />
+              </>
+            )}
+          </g>
+        </g>
+        {/* Wordmark on the right */}
+        <g transform={`translate(${size + gap},0)`}>
+          {colorScheme === "brand" ? (
+            <>
+              <defs>
+                <linearGradient id="wordmark-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#8B5CF6" />
+                  <stop offset="100%" stopColor="#14B8A6" />
+                </linearGradient>
+              </defs>
+              <text x="0" y={textY} fontFamily="Geist, system-ui, sans-serif" fontSize={wmSize} fontWeight={600} fill="url(#wordmark-gradient)">
+                Bloomora
+              </text>
+            </>
+          ) : (
+            <text x="0" y={textY} fontFamily="Geist, system-ui, sans-serif" fontSize={wmSize} fontWeight={600} fill={getFill().fill ?? (isDark ? palette.white : palette.black)}>
+              Bloomora
+            </text>
+          )}
+        </g>
+      </motion.svg>
+    );
+  }
 
   return (
     <div className="inline-flex items-center" style={{ gap: lockupGap }}>
