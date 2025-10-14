@@ -20,6 +20,7 @@ interface LogoProps {
   wordmarkSize?: number;
   badge?: boolean;
   border?: boolean;
+  svgRef?: React.Ref<SVGSVGElement>;
 }
 
 export function Logo({
@@ -37,6 +38,7 @@ export function Logo({
   wordmarkSize,
   badge = false,
   border = false,
+  svgRef,
 }: LogoProps) {
   const isDark = on === "dark";
 
@@ -77,6 +79,7 @@ export function Logo({
       className={className}
       style={style}
       aria-label={ariaLabel}
+      ref={svgRef as any}
     >
       {accessibleTitle ? <title>{accessibleTitle}</title> : null}
       <defs>
