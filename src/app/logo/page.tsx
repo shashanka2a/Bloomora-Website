@@ -6,7 +6,7 @@ export default function LogoPage() {
   const lotusRef = useRef<SVGSVGElement | null>(null);
   const lockupRef = useRef<SVGSVGElement | null>(null);
 
-  function downloadPng(ref: React.RefObject<SVGSVGElement>, filename: string, scale = 4) {
+  function downloadPng(ref: React.RefObject<SVGSVGElement | null>, filename: string, scale = 4) {
     const svg = ref.current;
     if (!svg) return;
     const svgData = new XMLSerializer().serializeToString(svg);
