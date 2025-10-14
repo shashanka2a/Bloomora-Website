@@ -11,7 +11,7 @@ interface LogoProps {
   animated?: boolean;
   className?: string;
   style?: React.CSSProperties;
-  title?: string;
+  accessibleTitle?: string;
   "aria-label"?: string;
 }
 
@@ -22,7 +22,7 @@ export function Logo({
   animated = true,
   className,
   style,
-  title,
+  accessibleTitle,
   "aria-label": ariaLabel,
 }: LogoProps) {
   const lotus = (
@@ -37,9 +37,9 @@ export function Logo({
       transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
       className={className}
       style={style}
-      title={title}
       aria-label={ariaLabel}
     >
+      {accessibleTitle ? <title>{accessibleTitle}</title> : null}
       <defs>
         <linearGradient id="lotus-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#8B5CF6" />
