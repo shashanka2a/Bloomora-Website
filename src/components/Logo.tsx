@@ -4,11 +4,15 @@ import React from "react";
 
 type LogoVariant = "lotus" | "wordmark" | "lockup";
 
-interface LogoProps extends React.SVGProps<SVGSVGElement> {
+interface LogoProps {
   variant?: LogoVariant;
   size?: number;
   showGlow?: boolean;
   animated?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
+  title?: string;
+  "aria-label"?: string;
 }
 
 export function Logo({
@@ -16,7 +20,10 @@ export function Logo({
   size = 40,
   showGlow = false,
   animated = true,
-  ...svgProps
+  className,
+  style,
+  title,
+  "aria-label": ariaLabel,
 }: LogoProps) {
   const lotus = (
     <motion.svg
@@ -28,7 +35,10 @@ export function Logo({
       initial={animated ? { opacity: 0, scale: 0.9 } : false}
       animate={animated ? { opacity: 1, scale: 1 } : undefined}
       transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
-      {...svgProps}
+      className={className}
+      style={style}
+      title={title}
+      aria-label={ariaLabel}
     >
       <defs>
         <linearGradient id="lotus-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
