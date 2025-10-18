@@ -66,7 +66,7 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="py-16 sm:py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-immersive relative overflow-hidden">
+    <section id="testimonials" className="py-16 sm:py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0E0E0E] to-[#0A0A0A] relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl -translate-y-1/2" />
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl -translate-y-1/2" />

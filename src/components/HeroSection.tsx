@@ -22,11 +22,8 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
-      {/* Enhanced immersive background with dynamic gradients */}
-      <div className="absolute inset-0 bg-immersive" />
-      
-      {/* Animated gradient overlay */}
-      <div className="absolute inset-0 bg-dynamic-gradient opacity-60" />
+      {/* Seamless gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0E0E0E] via-[#1A1A1A] to-[#0E0E0E]" />
       
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden">

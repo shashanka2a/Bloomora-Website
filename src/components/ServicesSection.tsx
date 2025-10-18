@@ -37,7 +37,7 @@ export function ServicesSection() {
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   return (
-    <section id="services" className="py-16 sm:py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-immersive relative overflow-hidden">
+    <section id="services" className="py-16 sm:py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0A0A0A] to-[#0E0E0E] relative overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <motion.div
