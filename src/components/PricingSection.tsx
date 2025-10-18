@@ -71,7 +71,7 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-16 sm:py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0E0E0E] to-[#0A0A0A] relative overflow-hidden">
+    <section id="pricing" className="py-16 sm:py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-immersive relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-violet-500/10 to-transparent blur-3xl" />
       

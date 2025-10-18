@@ -22,14 +22,42 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
-      {/* Enhanced dark gradient background with layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0E0E0E] via-[#1A1A1A] to-[#0E0E0E]" />
+      {/* Enhanced immersive background with dynamic gradients */}
+      <div className="absolute inset-0 bg-immersive" />
       
-      {/* Clean background only; decorative layers removed */}
+      {/* Animated gradient overlay */}
+      <div className="absolute inset-0 bg-dynamic-gradient opacity-60" />
+      
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 8}s`,
+            }}
+            animate={{
+              y: [0, -100],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: 8 + Math.random() * 4,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Enhanced glow effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-transparent to-teal-500/5" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse" />
 
       {/* Content */}
       <motion.div 
-        style={{ opacity }}
         className="relative z-10 max-w-6xl mx-auto text-center"
       >
         {/* Animated Lotus Logo */}
@@ -100,7 +128,7 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
               className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
             >
               websites & apps that{" "}
-              <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-teal-400 bg-clip-text text-transparent">bloom</span>
+              <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-teal-400 bg-clip-text text-transparent text-glow text-neon">bloom</span>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -131,45 +159,62 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
         >
           <a href="https://calendly.com/5ha5hank/availability" target="_blank" rel="noopener noreferrer" className="w-full sm:w-64">
-            <MagneticButton
-              className="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-6 relative group overflow-hidden shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300"
+            <div 
+              className="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-6 relative group overflow-hidden shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300 btn-magnetic"
+              style={{
+                boxShadow: '0 0 30px rgba(139, 92, 246, 0.3), 0 0 60px rgba(139, 92, 246, 0.1)',
+                animation: 'pulse-glow 3s ease-in-out infinite'
+              }}
             >
-              <span className="relative z-10 flex items-center gap-2">
-                Start Your Project
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <ArrowRight className="w-5 h-5" />
-                </motion.div>
-              </span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-teal-500 to-violet-500"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: "0%" }}
-                transition={{ duration: 0.5 }}
-              />
-            </MagneticButton>
+                <MagneticButton className="w-full h-full">
+                  <span className="relative z-10 flex items-center gap-2 text-glow">
+                    Start Your Project
+                    <motion.div
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <ArrowRight className="w-5 h-5" />
+                    </motion.div>
+                  </span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-teal-500 to-violet-500"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "0%" }}
+                    transition={{ duration: 0.5 }}
+                  />
+                  {/* Enhanced glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-teal-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </MagneticButton>
+              </div>
           </a>
           
-          <MagneticButton
-            onClick={scrollToWork}
-            variant="outline"
-            className="w-full sm:w-64 border-2 border-white/20 bg-white text-black hover:bg-white/90 hover:border-white/30 px-8 py-6 group relative transition-all duration-300"
+          <div 
+            className="w-full sm:w-64 border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/50 px-8 py-6 group relative transition-all duration-300 btn-magnetic"
+            style={{
+              boxShadow: '0 0 20px rgba(255, 255, 255, 0.1), 0 0 40px rgba(255, 255, 255, 0.05)',
+            }}
           >
-            <span className="relative z-10">View Our Work</span>
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-purple-500/10 to-teal-500/0 opacity-0 group-hover:opacity-100 rounded-lg"
-              animate={{
-                x: ["-100%", "100%"],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-          </MagneticButton>
+            <MagneticButton
+              onClick={scrollToWork}
+              variant="outline"
+              className="w-full h-full"
+            >
+              <span className="relative z-10 text-glow">View Our Work</span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-purple-500/20 to-teal-500/0 opacity-0 group-hover:opacity-100 rounded-lg"
+                animate={{
+                  x: ["-100%", "100%"],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
+              {/* Enhanced glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-teal-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </MagneticButton>
+          </div>
         </motion.div>
 
         {/* Animated scroll indicator */}

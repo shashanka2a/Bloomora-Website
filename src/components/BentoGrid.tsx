@@ -47,7 +47,7 @@ const projects = [
 
 export function BentoGrid() {
   return (
-    <section id="work" className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#0A0A0A] relative overflow-hidden">
+    <section id="work" className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-immersive relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl" />

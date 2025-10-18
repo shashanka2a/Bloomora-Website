@@ -11,6 +11,7 @@ import { ProjectIntake } from "@/components/ProjectIntake";
 import { CustomCursor } from "@/components/CustomCursor";
 import { FloatingNav } from "@/components/FloatingNav";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { PersistentCTA } from "@/components/PersistentCTA";
 
 export default function Home() {
   const [showIntake, setShowIntake] = useState(false);
@@ -34,17 +35,18 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0E0E0E] cursor-none">
-      <CustomCursor />
-      <ScrollProgress />
-      <FloatingNav />
-      <HeroSection onStartProject={() => setShowIntake(true)} />
-      <BentoGrid />
-      <ServicesSection />
-      <TestimonialsSection />
-      <PricingSection />
-      <FinalCTA onStartProject={() => setShowIntake(true)} />
-      <Footer />
-    </div>
+        <div className="min-h-screen bg-[#0E0E0E] cursor-none">
+          <CustomCursor />
+          <ScrollProgress />
+          <FloatingNav />
+          <PersistentCTA />
+          <HeroSection onStartProject={() => setShowIntake(true)} />
+          <BentoGrid />
+          <ServicesSection />
+          <TestimonialsSection />
+          <PricingSection />
+          <FinalCTA onStartProject={() => setShowIntake(true)} />
+          <Footer />
+        </div>
   );
 }
