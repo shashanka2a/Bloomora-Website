@@ -386,9 +386,8 @@ html {
   border-radius: 4px;
 }
 
-/* Enhanced selection */
+/* Remove text selection highlight */
 ::selection {
-  background: linear-gradient(45deg, rgba(139, 92, 246, 0.3), rgba(20, 184, 166, 0.3));
-  color: white;
-  text-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+  background: transparent;
+  color: inherit;
 }
