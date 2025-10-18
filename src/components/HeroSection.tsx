@@ -155,64 +155,45 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
           transition={{ duration: 0.8, delay: 1.4, ease: [0.33, 1, 0.68, 1] }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
         >
-          <div
-            className="w-full sm:w-64 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-6 relative group overflow-hidden shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300 btn-magnetic"
-            style={{
-              boxShadow: '0 0 30px rgba(139, 92, 246, 0.3), 0 0 60px rgba(139, 92, 246, 0.1)',
-              animation: 'pulse-glow 3s ease-in-out infinite'
-            }}
+          <MagneticButton
+            onClick={onStartProject}
+            className="w-full sm:w-64 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-6 relative group overflow-hidden shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300"
           >
-            <MagneticButton
-              onClick={onStartProject}
-              className="w-full h-full"
-            >
-              <span className="relative z-10 flex items-center gap-2 text-glow">
-                Start Your Project
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <ArrowRight className="w-5 h-5" />
-                </motion.div>
-              </span>
+            <span className="relative z-10 flex items-center gap-2">
+              Start Your Project
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-teal-500 to-violet-500"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: "0%" }}
-                transition={{ duration: 0.5 }}
-              />
-              {/* Enhanced glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-teal-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </MagneticButton>
-          </div>
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <ArrowRight className="w-5 h-5" />
+              </motion.div>
+            </span>
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-teal-500 to-violet-500"
+              initial={{ x: "-100%" }}
+              whileHover={{ x: "0%" }}
+              transition={{ duration: 0.5 }}
+            />
+          </MagneticButton>
           
-          <div
-            className="w-full sm:w-64 border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/50 px-8 py-6 group relative transition-all duration-300 btn-magnetic"
-            style={{
-              boxShadow: '0 0 20px rgba(255, 255, 255, 0.1), 0 0 40px rgba(255, 255, 255, 0.05)',
-            }}
+          <MagneticButton
+            onClick={scrollToWork}
+            variant="outline"
+            className="w-full sm:w-64 border-2 border-white/20 bg-white text-black hover:bg-white/90 hover:border-white/30 px-8 py-6 group relative transition-all duration-300"
           >
-            <MagneticButton
-              onClick={scrollToWork}
-              variant="outline"
-              className="w-full h-full"
-            >
-              <span className="relative z-10 text-glow">View Our Work</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-purple-500/20 to-teal-500/0 opacity-0 group-hover:opacity-100 rounded-lg"
-                animate={{
-                  x: ["-100%", "100%"],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              />
-              {/* Enhanced glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-teal-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </MagneticButton>
-          </div>
+            <span className="relative z-10">View Our Work</span>
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-purple-500/10 to-teal-500/0 opacity-0 group-hover:opacity-100 rounded-lg"
+              animate={{
+                x: ["-100%", "100%"],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+          </MagneticButton>
         </motion.div>
 
         {/* Animated scroll indicator */}
