@@ -127,14 +127,6 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
               websites & apps that{" "}
               <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-teal-400 bg-clip-text text-transparent text-glow text-neon">bloom</span>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.0, duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-              className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-3"
-            >
-              into business growth
-            </motion.div>
           </motion.h1>
         </div>
 
@@ -143,9 +135,9 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2, ease: [0.33, 1, 0.68, 1] }}
-          className="text-gray-400 mb-10 sm:mb-12 max-w-2xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed px-4"
+          className="text-gray-400 mb-10 sm:mb-12 max-w-2xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed px-4 text-center"
         >
-          Full-stack design & development agency — we build websites and apps that convert, crafted for Indian founders and global startups.
+          Full-stack design & development agency — we build websites and apps that convert.
         </motion.p>
 
         {/* CTA Buttons with magnetic effect */}

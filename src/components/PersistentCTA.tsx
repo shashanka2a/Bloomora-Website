@@ -44,7 +44,7 @@ export function PersistentCTA() {
             >
               <div className="flex items-center gap-3">
                 <Calendar className="w-5 h-5" />
-                <span className="font-medium text-glow">Book a Call</span>
+                <span className="font-medium">Book a Call</span>
                 <motion.div
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -73,7 +73,7 @@ export function PersistentCTA() {
             >
               <div className="flex items-center gap-3">
                 <MessageCircle className="w-5 h-5" />
-                <span className="font-medium text-glow">WhatsApp</span>
+                <span className="font-medium">WhatsApp</span>
                 <motion.div
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

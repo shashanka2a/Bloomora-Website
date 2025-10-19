@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bloomora - Digital Agency for Indian Founders & Global Startups",
+  title: "Bloomora - Website & App Development Agency",
   description:
-    "Design. Code. Deploy — websites and apps that convert, crafted for Indian founders and global startups.",
+    "Full-stack design & development agency — we build websites and apps that convert. Professional web and mobile app development services.",
   icons: { 
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" }
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     apple: "/favicon.svg"
   },
   openGraph: {
-    title: "Bloomora",
+    title: "Bloomora - Website & App Development Agency",
     description:
-      "Design. Code. Deploy — websites and apps that convert, crafted for Indian founders and global startups.",
+      "Full-stack design & development agency — we build websites and apps that convert. Professional web and mobile app development services.",
     url: "https://bloomora.example.com",
     siteName: "Bloomora",
     images: [
