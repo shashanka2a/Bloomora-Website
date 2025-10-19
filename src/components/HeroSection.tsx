@@ -78,7 +78,7 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
           initial={{ opacity: 0, y: -20, scale: 0.8 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1], delay: 0.4 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 mb-8 group hover:bg-white/10 transition-all duration-300 cursor-default"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 mb-8 cursor-default"
         >
           <motion.div
             animate={{ rotate: [0, 360] }}
@@ -86,7 +86,7 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
           >
             <Sparkles className="w-4 h-4 text-violet-400" />
           </motion.div>
-          <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
+          <span className="text-sm text-gray-300">
             Crafting digital excellence since 2024
           </span>
           <motion.div
@@ -149,42 +149,20 @@ export function HeroSection({ onStartProject }: HeroSectionProps) {
         >
           <MagneticButton
             onClick={onStartProject}
-            className="w-full sm:w-64 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-6 relative group overflow-hidden shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300"
+            className="w-full sm:w-64 bg-gradient-to-r from-violet-600 to-purple-600 text-white px-8 py-6 relative group overflow-hidden shadow-lg shadow-violet-500/25"
           >
             <span className="relative z-10 flex items-center gap-2">
               Start Your Project
-              <motion.div
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <ArrowRight className="w-5 h-5" />
-              </motion.div>
+              <ArrowRight className="w-5 h-5" />
             </span>
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-teal-500 to-violet-500"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: "0%" }}
-              transition={{ duration: 0.5 }}
-            />
           </MagneticButton>
           
           <MagneticButton
             onClick={scrollToWork}
             variant="outline"
-            className="w-full sm:w-64 border-2 border-white/20 bg-white text-black hover:bg-white/90 hover:border-white/30 px-8 py-6 group relative transition-all duration-300"
+            className="w-full sm:w-64 border-2 border-white/20 bg-white text-black px-8 py-6 group relative"
           >
             <span className="relative z-10">View Our Work</span>
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-purple-500/10 to-teal-500/0 opacity-0 group-hover:opacity-100 rounded-lg"
-              animate={{
-                x: ["-100%", "100%"],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
           </MagneticButton>
         </motion.div>
 
