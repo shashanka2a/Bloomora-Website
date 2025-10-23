@@ -29,7 +29,7 @@ const projects = [
     outcome: "Real-time booking",
     delivery: "2 weeks delivery",
     image: "/snapevent.png",
-    link: "https://snapevent.in/",
+    link: "https://www.snapevent.org/",
     logo: Camera,
     categories: ["Marketplace", "Event booking", "Real-time"]
   },
