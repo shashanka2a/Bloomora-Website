@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Bloomora",
     images: [
       {
-        url: "/og-image.png",
+        url: "/bloomora.png",
         width: 1200,
         height: 630,
         alt: "Bloomora Social Preview",
